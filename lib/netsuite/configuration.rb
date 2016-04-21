@@ -13,6 +13,7 @@ module NetSuite
     def connection(params={}, credentials={})
       Savon.client({
         wsdl: wsdl,
+        follow_redirects: true,
         read_timeout: read_timeout,
         namespaces: namespaces,
         soap_header: auth_header(credentials).update(soap_header),
